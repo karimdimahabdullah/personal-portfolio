@@ -1,11 +1,6 @@
 import { useState } from 'react'
 import './App.css'
 
-/* ------------------------------------------------------------------
-   EDIT ONLY THIS OBJECT. The whole page reads from it.
-   Every TODO is a placeholder I invented. Replace it or delete the
-   entry — a live site with TODO on it costs you the client.
-------------------------------------------------------------------- */
 const profile = {
   name: 'Karim Dimah Abdullah',
   role: 'Frontend and embedded-systems developer',
@@ -16,7 +11,7 @@ const profile = {
   email: 'karimdimahabdullah0@gmail.com',
   phone: '+233 50 914 3569',
   links: [
-    { label: 'GitHub', href: 'https://github.com/karimdimahabdullah' },
+    { label: 'GitHub', href: 'https://github.com/karimdimahabdullah?tab=repositories' },
   ],
 
   // 3 to 6 projects. Each one needs an outcome, not a description.
