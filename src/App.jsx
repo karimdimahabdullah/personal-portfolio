@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
+
 const profile = {
   name: 'Karim Dimah Abdullah',
   role: 'Frontend and embedded-systems developer',
@@ -62,7 +63,7 @@ const profile = {
   testimonials: [],
 }
 
-function Nav() {
+  function Nav() {
   const [open, setOpen] = useState(false)
   const items = [
     ['Work', '#work'],
@@ -90,6 +91,7 @@ function Nav() {
     </header>
   )
 }
+
 
 function Hero() {
   return (
