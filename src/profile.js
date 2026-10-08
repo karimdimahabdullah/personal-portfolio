@@ -2,7 +2,7 @@
    EDIT ONLY THIS FILE FOR CONTENT. Every component reads from it.
    Built for a recruiter audience: lead with proof of work.
 ------------------------------------------------------------------- */
-import photo from './assets/kareem.jpg' 
+import photo from './assets/Kareem.jpg' 
 export const profile = {
   name: 'Karim Dimah Abdullah',
   role: 'Electrical & Electronics Engineering student — Power Systems',
