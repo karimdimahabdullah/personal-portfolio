@@ -1,34 +1,36 @@
 import { profile } from '../profile.js'
-import BackHome from './BackHome.jsx'
+import PageHead from './PageHead.jsx'
+import SectionHead from './SectionHead.jsx'
+import SkillGrid from './SkillGrid.jsx'
 import Testimonials from './Testimonials.jsx'
+import ContactCta from './ContactCta.jsx'
 
 export default function About() {
+  const { education: ed } = profile
+
   return (
     <>
-      <section className="section page-top">
-        <BackHome />
-        <div className="about-grid">
-          <div>
-            <h2 className="section-title">How I work</h2>
-            <p className="prose">
-              I scope the problem before writing code, ship in pieces you can see,
-              and hand over something you can run without me. You get working
-              builds and plain updates.
-            </p>
-            <p className="prose">
-              Replace this with your own story: what you studied, what pulled you
-              into building, and the kind of problem you want next.
-            </p>
-          </div>
-          <div>
-            <h3 className="skills-title">Tools I reach for</h3>
-            <ul className="chips chips-wide">
-              {profile.skills.map((s) => <li key={s}>{s}</li>)}
-            </ul>
-          </div>
+      <PageHead eyebrow="About" title="About me" />
+
+      <div className="about-layout">
+        <div className="about-prose">
+          {profile.about.map((para) => <p key={para}>{para}</p>)}
         </div>
+        <article className="card">
+          <span className="fact-label">Education</span>
+          <p className="fact-title">{ed.school}</p>
+          <p>{ed.field}</p>
+          <p>{ed.place} · {ed.period}</p>
+        </article>
+      </div>
+
+      <section>
+        <SectionHead eyebrow="Skills" title="Tools I reach for" />
+        <SkillGrid />
       </section>
+
       <Testimonials />
+      <ContactCta />
     </>
   )
 }

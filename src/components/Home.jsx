@@ -1,27 +1,42 @@
-import { Link } from 'react-router-dom'
+import { profile } from '../profile.js'
 import Hero from './Hero.jsx'
-
-const quickLinks = [
-  { to: '/work', title: 'Selected work', body: 'Two power-systems builds, with the technical detail behind each.' },
-  { to: '/about', title: 'About', body: 'How I work, and the tools I reach for.' },
-  { to: '/contact', title: 'Contact', body: 'Reviewing me for a role? Get in touch here.' },
-]
+import SectionHead from './SectionHead.jsx'
+import ProjectCard from './ProjectCard.jsx'
+import SkillGrid from './SkillGrid.jsx'
+import ContactCta from './ContactCta.jsx'
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <section className="section">
-        <div className="quick-links">
-          {quickLinks.map((q) => (
-            <Link key={q.to} to={q.to} className="quick-link">
-              <h3>{q.title}</h3>
-              <p>{q.body}</p>
-              <span className="quick-link-arrow">View →</span>
-            </Link>
-          ))}
-        </div>
+
+      {profile.projects.length > 0 && (
+        <section>
+          <SectionHead
+            eyebrow="Projects"
+            title="Selected work"
+            to="/work"
+            linkLabel="View all work"
+          />
+          <div className="card-grid">
+            {profile.projects.map((p, i) => (
+              <ProjectCard key={p.title} project={p} index={i} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section>
+        <SectionHead
+          eyebrow="Capabilities"
+          title="What I work with"
+          to="/about"
+          linkLabel="More about me"
+        />
+        <SkillGrid />
       </section>
+
+      <ContactCta />
     </>
   )
 }
